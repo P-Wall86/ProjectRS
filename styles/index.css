@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* RESET */
 body {
     margin: 0;
@@ -46,6 +50,19 @@ header.site-header {
     margin: 0.3rem;
     font-size: 0.72rem;
     opacity: 0.85;
+    font-style: italic;
+}
+
+.swipe-left {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.swipe-right {
+    transform: translateX(20px);
+    opacity: 0;
+    transition: all 0.2s ease;
 }
 
 /* CONTAINER */
@@ -72,11 +89,13 @@ header.site-header {
     margin-top: 0;
     font-size: 1.1rem;
     text-align: center;
+    font-style: italic;
 }
 
 #content p {
     font-size: 0.95rem;
     line-height: 1.5;
+    text-align: center;
 }
 
 #content {
@@ -189,21 +208,42 @@ header.site-header {
 /* FOOTER */
 footer {
     background: linear-gradient(135deg, #142850, #125084);
-    color: white;
-    border-top: 3px solid #cab67d;
-    padding: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #cab67d;
+    padding: 14px 10px;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 footer p {
-    margin: 4px 0;
-    font-size: 0.9rem;
-    font-weight: 500;
+    margin: 3px 0;
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
 footer p:first-child {
     letter-spacing: 4px;
     font-weight: 600;
+    opacity: 0.9;
+}
+
+/* LINKS */
+footer a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer p:not(:first-child) {
+    opacity: 0.85;
 }
 
 /* HIDDEN CLASS */
@@ -286,3 +326,22 @@ footer p:first-child {
         grid-area: presidency;
     }
 }
+
+@media (max-width: 768px) {
+    #sidebar {
+        display: none !important;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #content,
+    #presidency {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
