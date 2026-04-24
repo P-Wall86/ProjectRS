@@ -1,18 +1,19 @@
 /* RESET */
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #f4f7fb;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    background-color: #f5eee1;
     color: #1f2a44;
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, #1f3a93, #142850);
+    background: linear-gradient(135deg, #142850, #125084);
     color: white;
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #d4af37;
+    border-bottom: 3px solid #cab67d;
 }
 
 
@@ -32,7 +33,7 @@ header {
     border-radius: 16px;
     padding: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-top: 3px solid #d4af37;
+    border-top: 3px solid #cab67d;
 }
 
 /* CONTENT */
@@ -50,17 +51,19 @@ header {
     text-align: left;
     padding: 10px;
     font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
     border: none;
-    background: #f0f4ff;
+    background: #125084;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
-    color: #1f3a93;
+    color: white;
 }
 
 .month-btn:hover {
-    background: #e3ebff;
-    color: #d4af37;
+    background: #cab67d;
+    color: black;
 }
 
 .arrow {
@@ -102,7 +105,7 @@ footer {
     padding: 15px;
     font-size: 14px;
     color: #1f3a93;
-    border-top: 1px solid #d4af37;
+    border-top: 1px solid #cab67d;
     margin-top: 20px;
     background: white;
 }
