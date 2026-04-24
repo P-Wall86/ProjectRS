@@ -1,21 +1,52 @@
 /* RESET */
 body {
     margin: 0;
+    font-size: 0.82;
     font-family: 'Times New Roman', Times, serif;
-    font-style: bold;
     background-color: #f5eee1;
     color: #1f2a44;
 }
 
 /* HEADER */
-header {
+header.site-header {
     background: linear-gradient(135deg, #142850, #125084);
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 17px 20px;
     border-bottom: 3px solid #cab67d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+.logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.2;
+}
+
+.header-text p {
+    margin: 0.3rem;
+    font-size: 0.72rem;
+    opacity: 0.85;
+}
 
 /* CONTAINER */
 .container {
@@ -39,10 +70,44 @@ header {
 /* CONTENT */
 #content h2 {
     margin-top: 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 #content {
     transition: all 0.3s ease;
+}
+
+#main-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #cab67d;
+    display: block;
+    margin: 0 auto;
+}
+
+#gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+#gallery-controls button {
+    background: #125084;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* SIDEBAR */
@@ -50,9 +115,9 @@ header {
     width: 100%;
     text-align: left;
     padding: 10px;
-    font-size: 16px;
+    font-size: 0.80rem;
     font-family: 'Times New Roman', Times, serif;
-    font-style: bold;
+    font-weight: bold;
     border: none;
     background: #125084;
     border-radius: 10px;
@@ -80,6 +145,7 @@ header {
     list-style: none;
     padding: 8px;
     border-radius: 8px;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -90,24 +156,54 @@ header {
 }
 
 /* PRESIDENCY */
-#presidency {
-    text-align: center;
+#person img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #cab67d;
+    margin-bottom: 10px;
 }
 
-#person img {
-    border-radius: 50%;
-    margin-bottom: 10px;
+#presidency {
+    text-align: center;
+    padding: 10px;
+}
+
+#presidency h2 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+#person h3 {
+    margin: 6px 0 2px;
+    font-size: 1rem;
+}
+
+#person p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
 }
 
 /* FOOTER */
 footer {
+    background: linear-gradient(135deg, #142850, #125084);
+    color: white;
+    border-top: 3px solid #cab67d;
+    padding: 16px;
     text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    color: #1f3a93;
-    border-top: 1px solid #cab67d;
-    margin-top: 20px;
-    background: white;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+footer p:first-child {
+    letter-spacing: 4px;
+    font-weight: 600;
 }
 
 /* HIDDEN CLASS */
@@ -127,26 +223,66 @@ footer {
 }
 
 @media (min-width: 768px) {
-    @media (min-width: 768px) {
-        .container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-areas:
-                "content sidebar"
-                "content presidency";
-            gap: 15px;
-        }
+    body {
+        font-size: 16px;
+    }
 
-        #content {
-            grid-area: content;
-        }
+    header.site-header {
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+    }
 
-        #sidebar {
-            grid-area: sidebar;
-        }
+    .logo {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        left: 20px;
+    }
 
-        #presidency {
-            grid-area: presidency;
-        }
+    .header-text {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .header-text h1 {
+        font-size: 25px;
+    }
+
+    .header-text p {
+        font-size: 18px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "content sidebar"
+            "content presidency";
+        gap: 15px;
+    }
+
+    #content {
+        grid-area: content;
+    }
+
+    #content h2 {
+        font-size: 1.4rem;
+    }
+
+    .month-btn {
+        font-size: 1rem;
+    }
+
+    .dates li {
+        font-size: 0.95rem;
+    }
+
+    #sidebar {
+        grid-area: sidebar;
+    }
+
+    #presidency {
+        grid-area: presidency;
     }
 }

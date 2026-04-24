@@ -13,9 +13,16 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-        <h1>RELIEF SOCIETY - B° MIGUEL LANÚS</h1>
-        <p>Bienvenidos</p>
+    <header class="site-header">
+
+        <a href="index.html" class="logo-link">
+            <img src="images/seal800.png" alt="Logo" class="logo">
+        </a>
+
+        <div class="header-text">
+            <h1>SOCIEDAD DE SOCORRO - B° MIGUEL LANÚS</h1>
+            <p>Bienvenidos</p>
+        </div>
     </header>
 
     <!-- MAIN CONTENT -->
@@ -24,9 +31,29 @@
 
             <!-- LEFT: Dynamic content -->
             <section id="content" class="show">
-                <h2 id="title">Taller</h2>
-                <p id="date">Fecha</p>
-                <p id="description">Descripción + fotos acá</p>
+                <h2 id="title">Bienvenidas al B° Miguel Lanús</h2>
+
+                <img id="main-img" src="images/Souvenirs.webp" alt="Intro image">
+
+                <div id="gallery-controls">
+                    <button id="prev">◀</button>
+                    <button id="next">▶</button>
+                </div>
+
+                <p id="description">
+                <p>La Sociedad de Socorro es una organización religiosa fundada el 17 de marzo de 1842, bajo la
+                    dirección del presidente Joseph Smith Jr., con el propósito de ayudar a los necesitados, fortalecer
+                    la fe y edificar a las hijas de Dios.</p>
+
+                <p>Desde sus inicios, esta organización ha sido un espacio de amor, servicio y crecimiento espiritual,
+                    donde cada mujer puede descubrir su lugar y su propósito. En cada unidad de La Iglesia de Jesucristo
+                    de los Santos de los Últimos Días, mujeres de distintos contextos son llamadas a servir a las demás.
+                </p>
+
+                <p>Hoy continuamos el legado de las pioneras y de quienes nos precedieron, procurando edificar y
+                    fortalecer a cada hermana. Por ello, compartimos enseñanzas y experiencias, con el deseo de que
+                    todas —incluso quienes no pudieron estar presentes en las actividades aquí mencionadas— se sientan
+                    incluidas y espiritualmente fortalecidas.</p </p>
             </section>
 
             <!-- RIGHT: Sidebar (months & dates) -->
@@ -55,12 +82,12 @@
 
             <!-- PRESIDENCY SECTION -->
             <section id="presidency">
-                <h2>Presidency</h2>
+                <h2>The Presidency</h2>
 
                 <div id="person">
-                    <img id="person-img" src="" alt="Person photo" width="100">
-                    <h3 id="person-name">Name</h3>
-                    <p id="person-desc">Description</p>
+                    <img id="person-img" src="images/Wall.jpg" alt="Person photo" width="100">
+                    <h3 id="person-name">Pamela Wall</h3>
+                    <p id="person-desc">President</p>
                 </div>
             </section>
 
@@ -68,7 +95,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer-content">
         <p>W · A · L · L</p>
         <p>Worship with us at [address]</p>
     </footer>
