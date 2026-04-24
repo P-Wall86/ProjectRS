@@ -9,7 +9,6 @@ const workshopIds = Object.entries(workshops)
     .map(([id]) => id);
 let currentIndex = 0;
 let currentImages = [];
-let currentImageIndex = 0;
 
 // DOM ELEMENTS
 const title = document.getElementById("title");
@@ -23,21 +22,34 @@ controls.style.display = "none";
 
 const items = document.querySelectorAll(".dates li");
 
+let originalDescriptionHTML = "";
+
+document.addEventListener("DOMContentLoaded", () => {
+    originalDescriptionHTML = description.innerHTML;
+    renderIntro();
+});
 // RENDER INTRO
 function renderIntro() {
+    if (currentIndex === -1) return;
+
     currentIndex = -1;
 
-    title.textContent = "Bienvenidas al B° Miguel Lanús";
-    date.textContent = "";
-    description.innerHTML = `
-        <p>La Sociedad de Socorro es una organización religiosa...</p>
-    `;
+    content.classList.remove("show");
+    content.classList.add("fade");
 
-    mainImg.src = "images/Souvenirs.webp";
-    controls.style.display = "none";
+    setTimeout(() => {
+        title.textContent = "Bienvenidas al B° Miguel Lanús";
+        date.textContent = "";
 
-    content.classList.remove("fade");
-    content.classList.add("show");
+        // RESTAURAR la descripción original
+        description.innerHTML = originalDescriptionHTML;
+
+        mainImg.src = "images/Souvenirs.webp";
+        controls.style.display = "none";
+
+        content.classList.remove("fade");
+        content.classList.add("show");
+    }, 150);
 }
 
 // RENDER WORKSHOP (CORE LOGIC)
@@ -80,22 +92,19 @@ function showIntro() {
 }
 
 function nextWorkshop() {
-    {
-        if (currentIndex >= workshopIds.length - 1) {
-            renderIntro();
-            return;
-        }
-
-        currentIndex++;
-        renderWorkshop(currentIndex);
+    if (currentIndex >= workshopIds.length - 1) {
+        renderIntro();
+        return;
     }
+    currentIndex++;
+    renderWorkshop(currentIndex);
 }
 
 function prevWorkshop() {
     if (currentIndex <= 0) {
+        renderIntro();
         return;
     }
-
     currentIndex--;
     renderWorkshop(currentIndex);
 }
@@ -132,31 +141,31 @@ monthButtons.forEach(button => {
     });
 });
 
-// GALLERY (IMAGES INSIDE WORKSHOP)
+// GALLERY
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
+let currentImageIndex = 0;
 
 prevBtn.addEventListener("click", () => {
     if (currentImages.length === 0) return;
 
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = currentImages.length - 1;
+    currentImageIndex--;
+    if (currentImageIndex < 0) {
+        currentImageIndex = currentImages.length - 1;
     }
 
-    mainImg.src = currentImages[currentIndex];
-
+    mainImg.src = currentImages[currentImageIndex];
 });
 
 nextBtn.addEventListener("click", () => {
     if (currentImages.length === 0) return;
 
-    currentIndex++;
-    if (currentIndex >= currentImages.length) {
-        currentIndex = 0;
+    currentImageIndex++;
+    if (currentImageIndex >= currentImages.length) {
+        currentImageIndex = 0;
     }
 
-    mainImg.src = currentImages[currentIndex];
+    mainImg.src = currentImages[currentImageIndex];
 });
 
 // PRESIDENCY SLIDER
@@ -207,39 +216,25 @@ function animateSwipe(direction, callback) {
 
 function handleSwipe() {
     const diff = touchStartX - touchEndX;
-    console.log("Diferencia usada:", diff);
 
-    if (Math.abs(diff) < 50) {
-        console.log("Swipe muy corto, ignorado");
-        return;
-    }
+    if (Math.abs(diff) < 50) return;
 
-    // En el intro
-    if (currentIndex === -1) {
-        if (diff > 0) {
-            console.log("Swipe izquierda (diff > 0) -> primera fecha");
-            renderWorkshop(0);
-        } else {
-            console.log("Swipe derecha (diff < 0) -> última fecha");
-            renderWorkshop(workshopIds.length - 1);
-        }
-        return;
-    }
-
-    // En un workshop
     if (diff > 0) {
-        console.log("Swipe izquierda -> SIGUIENTE workshop");
-        if (currentIndex >= workshopIds.length - 1) {
+        if (currentIndex === -1) {
+            renderWorkshop(workshopIds.length - 1);
+        } else if (currentIndex <= 0) {
             renderIntro();
         } else {
-            nextWorkshop();
+            renderWorkshop(currentIndex - 1);
         }
-    } else {
-        console.log("Swipe derecha -> ANTERIOR workshop");
-        if (currentIndex <= 0) {
+    }
+    else {
+        if (currentIndex === -1) {
+            renderWorkshop(0);
+        } else if (currentIndex >= workshopIds.length - 1) {
             renderIntro();
         } else {
-            prevWorkshop();
+            renderWorkshop(currentIndex + 1);
         }
     }
 }
@@ -248,13 +243,10 @@ function handleSwipe() {
 if (isMobile) {
     content.addEventListener("touchstart", (e) => {
         touchStartX = e.changedTouches[0].clientX;
-        console.log("Touch START:", touchStartX);
     });
 
     content.addEventListener("touchend", (e) => {
         touchEndX = e.changedTouches[0].clientX;
-        console.log("Touch END:", touchEndX);
-        console.log("Diferencia (start - end):", touchStartX - touchEndX);
         handleSwipe();
     });
 }
