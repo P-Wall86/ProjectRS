@@ -250,3 +250,59 @@ if (isMobile) {
         handleSwipe();
     });
 }
+
+//LIGHTBOX
+function openLightbox(imgSrc) {
+    const overlay = document.createElement("div");
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        cursor: pointer;
+    `;
+    
+    const bigImg = document.createElement("img");
+    bigImg.src = imgSrc;
+    bigImg.style.cssText = `
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 8px;
+    `;
+    
+    overlay.appendChild(bigImg);
+    document.body.appendChild(overlay);
+    
+    overlay.addEventListener("click", () => {
+        overlay.remove();
+    });
+}
+
+// MOBILE ONLY
+if (isMobile) {
+    const mainImgElement = document.getElementById("main-img");
+    mainImgElement.style.cursor = "pointer";
+    
+    mainImgElement.addEventListener("click", (e) => {
+        e.stopPropagation();
+        
+        let imageToShow = mainImgElement.src;
+        
+        if (currentImages && currentImages.length > 0) {
+            if (currentImageIndex !== undefined && currentImages[currentImageIndex]) {
+                imageToShow = currentImages[currentImageIndex];
+            } else if (currentImages[0]) {
+                imageToShow = currentImages[0];
+            }
+        }
+        
+        openLightbox(imageToShow);
+    });
+}

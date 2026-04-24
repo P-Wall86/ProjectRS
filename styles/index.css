@@ -1,3 +1,4 @@
+/* MOBILE FIRST */
 * {
     box-sizing: border-box;
 }
@@ -15,16 +16,16 @@ body {
 header.site-header {
     background: linear-gradient(135deg, #142850, #125084);
     color: white;
-    padding: 17px 20px;
+    padding: 15px 12px;
     border-bottom: 3px solid #cab67d;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .logo {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
     flex-shrink: 0;
     cursor: pointer;
@@ -38,19 +39,28 @@ header.site-header {
 
 .header-text {
     text-align: center;
+    flex: 1;
 }
 
 .header-text h1 {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
-.header-text p {
-    margin: 0.3rem;
-    font-size: 0.72rem;
-    opacity: 0.85;
+.header-text .subtitle {
+    margin: 2px 0 0 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.95;
+}
+
+.header-text .scripture {
+    margin: 4px 0 0 0;
+    font-size: 0.65rem;
     font-style: italic;
+    opacity: 0.85;
 }
 
 .swipe-left {
@@ -85,6 +95,10 @@ header.site-header {
 }
 
 /* CONTENT */
+#content {
+    transition: all 0.3s ease;
+}
+
 #content h2 {
     margin-top: 0;
     font-size: 1.1rem;
@@ -98,10 +112,6 @@ header.site-header {
     line-height: 1.6;
     text-align: left;
     margin-bottom: 1rem;
-}
-
-#content {
-    transition: all 0.3s ease;
 }
 
 #content #date {
@@ -255,40 +265,37 @@ footer {
     background: linear-gradient(135deg, #142850, #125084);
     color: rgba(255, 255, 255, 0.85);
     border-top: 1px solid #cab67d;
-    padding: 14px 10px;
+    padding: 25px 20px;
     text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    font-weight: bold;
 }
 
-footer p {
-    margin: 3px 0;
-    font-size: 0.85rem;
-    font-weight: 400;
+.footer-section {
+    margin-bottom: 15px;
 }
 
-footer p:first-child {
-    letter-spacing: 4px;
-    font-weight: 600;
-    opacity: 0.9;
+.footer-section:last-child {
+    margin-bottom: 0;
 }
 
-/* LINKS */
-footer a {
-    color: rgba(255, 255, 255, 0.75);
+.footer-section a,
+.footer-section p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    transition: 0.2s;
 }
 
-footer a:hover {
-    color: white;
+.footer-section a:hover {
+    color: #cab67d;
     text-decoration: underline;
 }
 
-footer p:not(:first-child) {
-    opacity: 0.85;
+.footer-section p {
+    margin: 8px 0 0 0;
+}
+
+.footer-section p:last-child {
+    font-size: 0.7rem;
 }
 
 /* HIDDEN CLASS */
@@ -316,6 +323,7 @@ footer p:not(:first-child) {
         justify-content: center;
         position: relative;
         padding: 20px;
+        gap: 15px;
     }
 
     .logo {
@@ -331,11 +339,17 @@ footer p:not(:first-child) {
     }
 
     .header-text h1 {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
-    .header-text p {
-        font-size: 18px;
+    .header-text .subtitle {
+        font-size: 1rem;
+        margin-top: 4px;
+    }
+
+    .header-text .scripture {
+        font-size: 0.9rem;
+        margin-top: 6px;
     }
 
     .container {
@@ -352,19 +366,44 @@ footer p:not(:first-child) {
 
     #content {
         grid-area: content;
-        padding: 18px 22px;
+        padding: 25px 30px;
     }
 
     #content p {
         text-align: justify;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 1.2rem;
         max-width: 100%;
-        text-align: justify;
+        font-size: 1.05rem;
+        line-height: 1.8;
     }
 
     #content h2 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #content #date {
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    #main-img {
+        max-width: 550px;
+        width: 100%;
+        margin: 20px auto;
+    }
+    
+    #gallery-controls {
+        gap: 15px;
+        margin: 15px 0;
+    }
+    
+    #gallery-controls button {
+        padding: 8px 16px;
+        font-size: 1rem;
     }
 
     #sidebar,
@@ -502,6 +541,28 @@ footer p:not(:first-child) {
         max-width: 80%;
         margin: 0 auto;
     }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 40px;
+        padding: 25px 20px;
+    }
+    
+    .footer-section {
+        margin-bottom: 0;
+    }
+    
+    .footer-section a,
+    .footer-section p {
+        font-size: 0.95rem;
+        font-weight: bold;
+    }
+    
+    .footer-section p {
+        margin: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -546,7 +607,7 @@ footer p:not(:first-child) {
     #content {
         padding: 15px;
     }
-    
+
     #presidency {
         padding: 15px;
     }
