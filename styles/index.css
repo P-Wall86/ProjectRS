@@ -5,7 +5,7 @@
 /* RESET */
 body {
     margin: 0;
-    font-size: 0.82;
+    font-size: 0.9rem;
     font-family: 'Times New Roman', Times, serif;
     background-color: #f5eee1;
     color: #1f2a44;
@@ -187,34 +187,67 @@ header.site-header {
 }
 
 /* PRESIDENCY */
-#person img {
-    width: 210px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #cab67d;
-    margin-bottom: 10px;
-}
-
 #presidency {
     text-align: center;
-    padding: 10px;
+    padding: 20px 15px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-top: 3px solid #cab67d;
 }
 
 #presidency h2 {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #125084;
+    position: relative;
+}
+
+#presidency h2:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #cab67d;
+    margin: 8px auto 0;
+}
+
+#person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#person img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #cab67d;
+    margin-bottom: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #person h3 {
-    margin: 6px 0 2px;
-    font-size: 1rem;
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1f2a44;
+    text-align: center;
 }
 
 #person p {
     margin: 0;
-    font-size: 0.85rem;
-    opacity: 0.9;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #666;
+    max-width: 80%;
+    margin: 0 auto;
+    font-style: italic;
 }
 
 /* FOOTER */
@@ -307,46 +340,187 @@ footer p:not(:first-child) {
 
     .container {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2.5fr 0.8fr;
         grid-template-areas:
             "content sidebar"
             "content presidency";
-        gap: 15px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 25px;
+        max-width: 1200px;
     }
 
     #content {
         grid-area: content;
+        padding: 18px 22px;
     }
 
     #content p {
         text-align: justify;
-        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
+        max-width: 100%;
+        text-align: justify;
     }
 
     #content h2 {
         font-size: 1.4rem;
     }
 
-    .month-btn {
-        font-size: 1rem;
-    }
-
-    .dates li {
-        font-size: 0.95rem;
+    #sidebar,
+    #presidency {
+        padding: 10px 12px;
     }
 
     #sidebar {
         grid-area: sidebar;
+        padding: 15px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .month {
+        border-bottom: 1px solid #e0d5c0;
+        padding-bottom: 12px;
+    }
+
+    .month:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .month-btn {
+        font-size: 1rem;
+        padding: 12px 15px;
+        background: #125084;
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: all 0.2s ease;
+        margin-bottom: 8px;
+    }
+
+    .month-btn:hover {
+        background: #cab67d;
+        color: #1f2a44;
+        transform: translateX(3px);
+    }
+
+    .arrow {
+        font-size: 0.8rem;
+        transition: transform 0.2s ease;
+    }
+
+    .dates {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .dates li {
+        padding: 10px 12px;
+        margin: 6px 0;
+        font-size: 0.9rem;
+        border-left: 3px solid transparent;
+        transition: all 0.2s ease;
+        border-radius: 8px;
+        background-color: #faf7f0;
+    }
+
+    .dates li:hover {
+        background: #f0e8d8;
+        border-left-color: #cab67d;
+        color: #125084;
+        transform: translateX(5px);
+        cursor: pointer;
+    }
+
+    .month:has(.dates:not(.hidden)) .month-btn {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+    }
+
+    .month:has(.dates:not(.hidden)) .dates {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed #e0d5c0;
     }
 
     #presidency {
         grid-area: presidency;
+        padding: 25px 20px;
+    }
+
+    #presidency h2 {
+        font-size: 1.25rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #125084;
+        position: relative;
+    }
+
+    #presidency h2:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #cab67d;
+        margin: 8px auto 0;
+    }
+
+    #person {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #person img {
+        width: 210px;
+        height: 210px;
+        margin-bottom: 0;
+    }
+
+    #person h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1f2a44;
+        text-align: center;
+    }
+
+    #person p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: center;
+        color: #666;
+        max-width: 80%;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    header.site-header {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    main {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     #sidebar {
         display: none !important;
     }
@@ -355,12 +529,38 @@ footer p:not(:first-child) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 12px;
+        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     #content,
     #presidency {
         width: 100%;
-        max-width: 600px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
-}
 
+    #content {
+        padding: 15px;
+    }
+    
+    #presidency {
+        padding: 15px;
+    }
+
+    #main-img,
+    #person img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+}
