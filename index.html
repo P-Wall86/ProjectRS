@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidas - B° Miguel Lanús</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="scripts/index.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Relief Society - B° Miguel Lanús</h1>
+        <p>Welcome</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+
+            <!-- LEFT: Dynamic content -->
+            <section id="content" class="show">
+                <h2 id="title">Taller</h2>
+                <p id="date">Fecha</p>
+                <p id="description">Descripción + fotos acá</p>
+            </section>
+
+            <!-- RIGHT: Sidebar (months & dates) -->
+            <aside id="sidebar">
+
+                <!-- Month block -->
+                <div class="month">
+                    <button class="month-btn">
+                        Abril <span class="arrow">▶</span></button>
+                    <ul class="dates">
+                        <li data-id="2026-04-10">10/04 - Taller 1</li>
+                        <li data-id="2026-04-18">18/04 - Taller 2</li>
+                    </ul>
+                </div>
+
+                <!-- Month block -->
+                <div class="month">
+                    <button class="month-btn">
+                        Mayo <span class="arrow">▶</span>
+                    </button>
+                    <ul class="dates hidden">
+                        <li data-id="2026-05-02">02/05 - Taller 3</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- PRESIDENCY SECTION -->
+            <section id="presidency">
+                <h2>Presidency</h2>
+
+                <div id="person">
+                    <img id="person-img" src="" alt="Person photo" width="100">
+                    <h3 id="person-name">Name</h3>
+                    <p id="person-desc">Description</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>W · A · L · L</p>
+        <p>Worship with us at [address]</p>
+    </footer>
+
+</body>
+
+</html>
