@@ -417,6 +417,24 @@ header.site-header {
     font-style: italic;
 }
 
+.verse {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: black;
+    text-align: center;
+
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e0d5c0;
+}
+
+.verse strong {
+    display: block;
+    margin-top: 10px;
+}
+
 /* FOOTER */
 footer {
     background: linear-gradient(135deg, #142850, #125084);
