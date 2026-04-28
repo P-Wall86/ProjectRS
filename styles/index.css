@@ -24,8 +24,8 @@ header.site-header {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     flex-shrink: 0;
     cursor: pointer;
@@ -73,6 +73,57 @@ header.site-header {
     transform: translateX(20px);
     opacity: 0;
     transition: all 0.2s ease;
+}
+
+/* NAV */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    background: linear-gradient(135deg, #142850, #125084);
+
+    border-bottom: 2px solid #cab67d;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 0 8px;
+
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.1;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+    font-size: 0.8rem;
+}
+
+.tab:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tab.active {
+    color: white;
+    font-weight: bold;
+}
+
+.tab.active::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: #cab67d;
+    border-radius: 2px;
 }
 
 /* CONTAINER */
@@ -149,6 +200,112 @@ header.site-header {
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
+}
+
+/* CLASSES */
+.class-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0d5c0;
+}
+
+.class-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.class-item h3 {
+    margin: 8px 0 4px 0;
+    font-size: 1rem;
+    color: #125084;
+    text-align: left;
+}
+
+.class-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.class-item .class-img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #cab67d;
+    margin-bottom: 8px;
+}
+
+/* BIZ */
+.biz {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0d5c0;
+}
+
+.biz:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.biz-text {
+    order: 2;
+    flex: 1;
+    text-align: left;
+}
+
+.biz-text h3 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    color: #125084;
+}
+
+#content .biz-text p {
+    margin: 0;
+}
+
+.biz-text p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.biz a {
+    font-size: 0.85rem;
+    color: #125084;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.biz a:hover {
+    text-decoration: underline;
+}
+
+.biz-img {
+    order: 1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid #cab67d;
+    flex-shrink: 0;
+}
+
+.biz-contacts {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.biz-contacts a {
+    font-size: 1.2rem;
+    color: #125084;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.biz-contacts a:hover {
+    transform: scale(1.2);
+    color: #cab67d;
 }
 
 /* SIDEBAR */
@@ -327,8 +484,8 @@ footer {
     }
 
     .logo {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         position: absolute;
         left: 20px;
     }
@@ -350,6 +507,125 @@ footer {
     .header-text .scripture {
         font-size: 0.9rem;
         margin-top: 6px;
+    }
+
+    /* NAV */
+    .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        padding: 14px 0;
+        background: linear-gradient(135deg, #142850, #125084);
+        border-bottom: 3px solid #cab67d;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab {
+        position: relative;
+        font-size: 1.15rem;
+        padding: 10px 14px;
+        color: rgba(255, 255, 255, 0.85);
+        transition: 0.2s;
+        letter-spacing: 0.3px;
+    }
+
+    .tab:hover {
+        color: white;
+    }
+
+    .tab.active {
+        color: white;
+        font-weight: 600;
+    }
+
+    /* CLASS */
+    .classes-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .class-card {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 20px;
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        overflow: hidden;
+    }
+
+    .class-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .class-info {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* BIZ */
+    .biz {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e0d5c0;
+    }
+
+    .biz-text {
+        flex: 1;
+    }
+
+    .biz-text h3 {
+        margin: 0 0 4px 0;
+        font-size: 1.15rem;
+        color: #125084;
+    }
+
+    .biz-text p {
+        margin: 0 0 6px 0;
+        font-size: 0.95rem;
+    }
+
+    .biz a {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .biz-img {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        border: 2px solid #cab67d;
+        flex-shrink: 0;
+    }
+
+    .biz-contacts {
+        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .biz-contacts a {
+        font-size: 1.2rem;
+        color: #125084;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .biz-contacts a:hover {
+        transform: scale(1.2);
+        color: #cab67d;
     }
 
     .container {
@@ -395,12 +671,12 @@ footer {
         width: 100%;
         margin: 20px auto;
     }
-    
+
     #gallery-controls {
         gap: 15px;
         margin: 15px 0;
     }
-    
+
     #gallery-controls button {
         padding: 8px 16px;
         font-size: 1rem;
@@ -549,17 +825,17 @@ footer {
         gap: 40px;
         padding: 25px 20px;
     }
-    
+
     .footer-section {
         margin-bottom: 0;
     }
-    
+
     .footer-section a,
     .footer-section p {
         font-size: 0.95rem;
         font-weight: bold;
     }
-    
+
     .footer-section p {
         margin: 0;
     }
