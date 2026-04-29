@@ -284,18 +284,36 @@ if (isMobile && mainImg) {
     if (content) {
         content.addEventListener("touchstart", (e) => {
             if (activeTab !== "historias") return;
+
             touchStartX = e.changedTouches[0].clientX;
         });
 
         content.addEventListener("touchend", (e) => {
             if (activeTab !== "historias") return;
+
             const touchEndX = e.changedTouches[0].clientX;
             const diff = touchStartX - touchEndX;
+
             if (Math.abs(diff) < 50) return;
+
+            const max = workshopIds.length - 1;
+
             if (diff > 0) {
-                currentIndex >= workshopIds.length - 1 ? renderIntro() : renderWorkshop(currentIndex + 1);
+                if (currentIndex === -1) {
+                    renderWorkshop(max);
+                } else if (currentIndex <= 0) {
+                    renderIntro();
+                } else {
+                    renderWorkshop(currentIndex - 1);
+                }
             } else {
-                currentIndex <= 0 ? renderIntro() : renderWorkshop(currentIndex - 1);
+                if (currentIndex === -1) {
+                    renderWorkshop(0);
+                } else if (currentIndex >= max) {
+                    renderIntro();
+                } else {
+                    renderWorkshop(currentIndex + 1);
+                }
             }
         });
     }
