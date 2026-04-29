@@ -75,6 +75,7 @@ function renderActiveTab() {
 
 function renderIntro() {
     currentIndex = -1;
+
     if (title) title.textContent = "Bienvenidas al B° Miguel Lanús";
     if (date) date.textContent = "";
     if (description) description.innerHTML = originalDescriptionHTML;
@@ -82,6 +83,10 @@ function renderIntro() {
         mainImg.src = "images/RSMLanus.png";
         mainImg.style.display = "block";
     }
+
+    const hint = document.getElementById("swipe-hint");
+    if (hint) hint.style.display = "block";
+
     if (controls) controls.style.display = "none";
     content.classList.add("show");
 }
@@ -111,6 +116,9 @@ function renderWorkshop(index) {
     mainImg.style.display = "block";
     description.innerHTML = `<p>${data.content.description}</p>`;
     setTimeout(() => content.classList.add("show"), 50);
+
+    const hint = document.getElementById("swipe-hint");
+    if (hint) hint.style.display = "none";
 }
 
 

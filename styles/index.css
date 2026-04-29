@@ -6,7 +6,7 @@
 /* RESET */
 body {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: 'Times New Roman', Times, serif;
     background-color: #f5eee1;
     color: #1f2a44;
@@ -63,16 +63,70 @@ header.site-header {
     opacity: 0.85;
 }
 
+.swipe-left,
+.swipe-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    opacity: 0.25;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
 .swipe-left {
-    transform: translateX(-20px);
-    opacity: 0;
-    transition: all 0.2s ease;
+    left: 10px;
 }
 
 .swipe-right {
-    transform: translateX(20px);
-    opacity: 0;
-    transition: all 0.2s ease;
+    right: 10px;
+}
+
+.swiping-left {
+    transform: translate(-25px, -50%);
+    opacity: 0.6;
+}
+
+.swiping-right {
+    transform: translate(25px, -50%);
+    opacity: 0.6;
+}
+
+#swipe-hint,
+#zoom-hint {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(31, 42, 68, 0.75);
+    font-weight: 500;
+    margin-top: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+}
+
+#zoom-hint {
+    font-size: 0.95rem;
+    color: rgba(31, 42, 68, 0.6);
+}
+
+.hints-wrapper {
+    animation: fadeHints 5s ease forwards;
+}
+
+@keyframes fadeHints {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-5px);
+        display: none;
+    }
 }
 
 /* NAV */
@@ -159,8 +213,8 @@ header.site-header {
 }
 
 #content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     text-align: left;
     margin-bottom: 1rem;
 }
@@ -184,6 +238,8 @@ header.site-header {
     border: 2px solid #cab67d;
     display: block;
     margin: 0 auto;
+
+    cursor: zoom-in;
 }
 
 #gallery-controls {
@@ -569,6 +625,20 @@ footer {
         font-weight: 600;
     }
 
+    .hints-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+    #swipe-hint,
+    #zoom-hint {
+        margin: 0;
+        font-size: 1rem;
+    }
+
     /* CLASS */
     .classes-wrapper {
         display: flex;
@@ -878,7 +948,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     body {
         overflow-x: hidden;
         width: 100%;
