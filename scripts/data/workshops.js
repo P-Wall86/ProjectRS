@@ -27,7 +27,7 @@ export const workshops = {
         date: "9 de abril, 2026",
         content: {
             description:`<p>Compartimos un espacio de aprendizaje y reflexión juntas, en el que también tuvimos la oportunidad de poner en uso la nueva máquina de coser del barrio. Como era la primera vez que la utilizábamos, nos llevó un tiempo acomodar y preparar todo lo necesario para comenzar a trabajar correctamente, familiarizándonos con cada parte y su funcionamiento.</p>
-                <p>Con la primera consejera en acción y la ayuda de otras hermanas, surgió la necesidad de realizar un cambio de aguja de forma improvisada. Este pequeño desafío se transformó en una instancia de aprendizaje compartido, donde pudimos conocer mejor el uso, cuidado y mantenimiento básico de la máquina.</p>
+                <p>Con Eli, nuestra primer consejera, y la ayuda de otras hermanas, surgió la necesidad de realizar un cambio de aguja de forma improvisada. Este pequeño desafío se transformó en una instancia de aprendizaje compartido, donde pudimos conocer mejor el uso, cuidado y mantenimiento básico de la máquina.</p>
                 <p>A lo largo de la actividad se vivió un ambiente de colaboración, paciencia y buena disposición, donde cada una aportó desde lo que sabía o podía hacer, fortaleciendo así el espíritu de unidad y servicio.
                 <p>A pesar de los detalles técnicos y los tiempos de ajuste, fue una experiencia muy enriquecedora, y ahora creemos que la máquina está lista para ser utilizada en futuros talleres.</p>
                 <p><em>“Mejores son dos que uno… porque si cayeren, el uno levantará a su compañero.”</em><strong>(Eclesiastés 4:9–10)</strong></p></p>`,
@@ -48,7 +48,7 @@ export const workshops = {
         content: {
             description: `
                 <p>Celebramos el aniversario de la Sociedad de Socorro en un ambiente cálido y alegre, acompañadas por algunas visitas y muchas cosas ricas para compartir. Disfrutamos de una trivia muy entretenida que mantuvo a todas participando con entusiasmo; incluso fue necesario desempatar con una pregunta desafiante, lo que le dio un toque inesperado y divertido a la actividad.</p>
-                <p>Pero si hay algo que ha caracterizado a la Sociedad de Socorro a lo largo de las generaciones es el espíritu de servicio, muchas veces expresado en algo tan sencillo y significativo como la comida. Esta organización ha contribuido históricamente en diversas actividades, más allá de las propias: simposios del SES para jóvenes adultos, campamentos de Hombres Jóvenes y Mujeres Jóvenes, bailes de barrio y estaca, y cenas de fin de año.</p>
+                <p>Pero si hay algo que ha caracterizado a la Sociedad de Socorro a lo largo de las generaciones es el espíritu de servicio, muchas veces expresado en algo tan sencillo y significativo como la comida. Esta organización ha contribuido históricamente en diversas actividades, más allá de las propias: simposios del SEI para jóvenes adultos, campamentos de Hombres Jóvenes y Mujeres Jóvenes, bailes de barrio y estaca, y cenas de fin de año.</p>
                 <p>Asimismo, al visitarnos unas a otras, es común ese gesto tan especial de preparar o llevar algo para compartir, fortaleciendo así los lazos de hermandad y cuidado mutuo.</p>
                 <p>Esperamos que en próximos aniversarios puedan sumarse aún más hermanas, para seguir compartiendo experiencias, testimonios, recetas y momentos especiales que nos unan como organización.</p>
                 <p><em>“Y de hacer bien y de la ayuda mutua no os olvidéis; porque de tales sacrificios se agrada Dios.”</em> <strong>(Hebreos 13:16)</strong></p>`,
@@ -72,7 +72,7 @@ export const workshops = {
                 <p>Debido a que el arreglo del salón sacramental ya estaba algo deteriorado por el paso del tiempo, surgió la necesidad de preparar uno nuevo. Así nació la idea de comenzar la serie de talleres con una actividad práctica: aprender a hacer flores artificiales junto a la hna. Aguilar (alias Peke).</p>
                 <p>Las hermanas llegaron temprano y, con mucho entusiasmo, nos organizamos para comenzar el trabajo. Algunas se dedicaron a marcar y cortar la goma eva, mientras otras avanzaban con el sellado utilizando calor y moldes, dando forma a hojas y pétalos.</p>
                 <p>Paralelamente, otro grupo se encargó de forrar los tallos, completando así cada parte del proceso. Como siempre, no faltó el infaltable grupo encargado de cebar tereré y mates, que acompañó y animó toda la jornada.</p>
-                <p>Finalmente, cada una de las piezas fue ensamblada hasta dar forma al arreglo completo, que pudo estrenarse ese mismo domingo en el salón sacramental. El resultado fue muy lindo y, sobre todo, fruto del esfuerzo y trabajo conjunto. ¿Quedó lindo, no?</p>
+                <p>Finalmente, cada una de las piezas fue ensamblada por Peke en su casa, hasta dar forma al arreglo completo, que pudo estrenarse ese mismo domingo en el salón sacramental. El resultado fue muy lindo y, sobre todo, fruto del esfuerzo y trabajo conjunto. ¿Quedó lindo, no?</p>
                 <p><em>“…tenían sus corazones entrelazados en unidad y en amor…”</em> <strong>(Mosíah 18:21)</strong></p>`,
             points: [
                 "Presentación",
