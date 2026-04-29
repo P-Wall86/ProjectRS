@@ -74,6 +74,7 @@ function renderActiveTab() {
 }
 
 function renderIntro() {
+    toggleHints(true);
     currentIndex = -1;
 
     if (title) title.textContent = "Bienvenidas al B° Miguel Lanús";
@@ -92,6 +93,8 @@ function renderIntro() {
 }
 
 function renderWorkshop(index) {
+    toggleHints(false);
+
     const id = workshopIds[index];
     const data = workshops[id];
     if (!data) return;
@@ -123,6 +126,8 @@ function renderWorkshop(index) {
 
 
 function renderClasses() {
+    toggleHints(false);
+
     title.textContent = "Para la clase que viene...";
     date.textContent = "";
 
@@ -175,6 +180,8 @@ function renderClasses() {
 }
 
 function renderBiz() {
+    toggleHints(false);
+
     if (title) title.textContent = "¿Qué compramos?";
     if (date) date.textContent = "";
     if (mainImg) mainImg.style.display = "none";
@@ -325,4 +332,13 @@ if (isMobile && mainImg) {
             }
         });
     }
+}
+
+// HINTS BEHAVIOUR
+function toggleHints(show) {
+    const swipe = document.getElementById("swipe-hint");
+    const zoom = document.getElementById("zoom-hint");
+
+    if (swipe) swipe.style.display = show ? "block" : "none";
+    if (zoom) zoom.style.display = show ? "block" : "none";
 }
